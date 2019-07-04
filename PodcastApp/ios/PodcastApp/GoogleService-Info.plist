@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>788940730200-k4u6le8ttn91qefspj46c68t4n4l56ok.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.788940730200-k4u6le8ttn91qefspj46c68t4n4l56ok</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCdcP8C856fcu5G4K9Hbyj6t484PbzzAAw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>788940730200</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pof.podcastapp</string>
+	<key>PROJECT_ID</key>
+	<string>pocpodcast-39bb5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pocpodcast-39bb5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:788940730200:ios:7768cc91f453d09f</string>
+	<key>DATABASE_URL</key>
+	<string>https://pocpodcast-39bb5.firebaseio.com</string>
+</dict>
+</plist>
