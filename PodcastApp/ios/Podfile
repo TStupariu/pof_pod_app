@@ -13,6 +13,8 @@ target 'PodcastApp' do
   target 'PodcastApp-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'react-native-track-player', :path => '../node_modules/react-native-track-player'
+
   end
 
   target 'PodcastAppTests' do

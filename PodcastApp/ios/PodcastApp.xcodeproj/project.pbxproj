@@ -43,6 +43,12 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		C4EC55BD930D8C03025ADCA9 /* libPods-PodcastAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 770C6B3C622718ED8F739947 /* libPods-PodcastAppTests.a */; };
 		C59B638A22CE485100FD4931 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C59B636222CE485000FD4931 /* GoogleService-Info.plist */; };
+		C59B63EE22CE631800FD4931 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */; };
+		C59B63EF22CE631800FD4931 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */; };
+		C59B63F022CE631800FD4931 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */; };
+		C59B641F22CE672F00FD4931 /* libRNTrackPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C59B641E22CE672000FD4931 /* libRNTrackPlayer.a */; };
+		C59B642122CE675800FD4931 /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59B642022CE675800FD4931 /* dummy.swift */; };
+		C88BD867162544378402B9D0 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		F0A05BC8DE124B2B8A36A7FE /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A61364B37F46B19720C612 /* libRNGestureHandler.a */; };
@@ -302,6 +308,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNFirebase;
 		};
+		C59B641D22CE672000FD4931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9B0E28291F07D76F00B71D2A;
+			remoteInfo = RNTrackPlayer;
+		};
 		C5ECC9F022CE459400B9996C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -372,6 +385,7 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4123A06083C30E04D079D69F /* Pods-PodcastAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastAppTests.release.xcconfig"; path = "Target Support Files/Pods-PodcastAppTests/Pods-PodcastAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		49582C0E4ABCA21325ED4F0E /* Pods-PodcastApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PodcastApp-tvOSTests/Pods-PodcastApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; path = RNPlaceholder.swift; sourceTree = "<group>"; };
 		5A9E1867BAF7490C99C47DB9 /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		770C6B3C622718ED8F739947 /* libPods-PodcastAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PodcastAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -383,6 +397,8 @@
 		C05B33D73FC0AF45AB310462 /* libPods-PodcastApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PodcastApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A61364B37F46B19720C612 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		C59B636222CE485000FD4931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNTrackPlayer.xcodeproj; path = "../node_modules/react-native-track-player/ios/RNTrackPlayer.xcodeproj"; sourceTree = "<group>"; };
+		C59B642022CE675800FD4931 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
 		CD02F1BC0BEDF7D80DF39314 /* Pods-PodcastApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-PodcastApp-tvOSTests/Pods-PodcastApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF3CB69096FF4F5F8060C0F0 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
 		DDF1A5CD5C08D14C96957C9A /* Pods-PodcastAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PodcastAppTests/Pods-PodcastAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -406,6 +422,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59B641F22CE672F00FD4931 /* libRNTrackPlayer.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -544,6 +561,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				C59B642022CE675800FD4931 /* dummy.swift */,
 			);
 			name = PodcastApp;
 			sourceTree = "<group>";
@@ -605,6 +623,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -676,12 +695,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C59B641A22CE671F00FD4931 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C59B641E22CE672000FD4931 /* libRNTrackPlayer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C5ECC9CA22CE459100B9996C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				C1A61364B37F46B19720C612 /* libRNGestureHandler.a */,
 				5A9E1867BAF7490C99C47DB9 /* libRNGestureHandler-tvOS.a */,
 				CF3CB69096FF4F5F8060C0F0 /* libRNFirebase.a */,
+				5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -797,7 +825,16 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = L2AS7WN7W6;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = L2AS7WN7W6;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -878,6 +915,10 @@
 				{
 					ProductGroup = C5ECC9F822CE459400B9996C /* Products */;
 					ProjectRef = EA91E257787D47A8B867EED6 /* RNGestureHandler.xcodeproj */;
+				},
+				{
+					ProductGroup = C59B641A22CE671F00FD4931 /* Products */;
+					ProjectRef = C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1129,6 +1170,13 @@
 			remoteRef = C59B63C222CE4D1F00FD4931 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		C59B641E22CE672000FD4931 /* libRNTrackPlayer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNTrackPlayer.a;
+			remoteRef = C59B641D22CE672000FD4931 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		C5ECC9F122CE459400B9996C /* libjsi.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1311,6 +1359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* PodcastAppTests.m in Sources */,
+				C59B63EE22CE631800FD4931 /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1320,6 +1369,8 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				C59B642122CE675800FD4931 /* dummy.swift in Sources */,
+				C88BD867162544378402B9D0 /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,6 +1380,7 @@
 			files = (
 				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
 				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
+				C59B63EF22CE631800FD4931 /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1337,6 +1389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DCD954D1E0B4F2C00145EB5 /* PodcastAppTests.m in Sources */,
+				C59B63F022CE631800FD4931 /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1373,6 +1426,7 @@
 			baseConfigurationReference = DDF1A5CD5C08D14C96957C9A /* Pods-PodcastAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = L2AS7WN7W6;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1397,6 +1451,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodcastApp.app/PodcastApp";
 			};
 			name = Debug;
@@ -1407,6 +1462,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = L2AS7WN7W6;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1427,6 +1483,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodcastApp.app/PodcastApp";
 			};
 			name = Release;
@@ -1438,6 +1495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = L2AS7WN7W6;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1452,6 +1510,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pof.podcastapp;
 				PRODUCT_NAME = PodcastApp;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1462,6 +1521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L2AS7WN7W6;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1476,6 +1536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pof.podcastapp;
 				PRODUCT_NAME = PodcastApp;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1512,6 +1573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.PodcastApp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
@@ -1549,6 +1611,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.PodcastApp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
@@ -1586,6 +1649,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.PodcastApp-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodcastApp-tvOS.app/PodcastApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
@@ -1623,6 +1687,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.PodcastApp-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodcastApp-tvOS.app/PodcastApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
@@ -1678,6 +1743,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1723,6 +1789,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
