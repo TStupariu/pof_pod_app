@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {SafeAreaView, Text, View} from "react-native";
+import {Button, Image, SafeAreaView, Text, View} from "react-native";
 import TrackPlayer from "react-native-track-player";
+import TrackProgress from "./TrackProgress";
 
 class Player extends Component {
   constructor(props) {
@@ -10,26 +11,47 @@ class Player extends Component {
   }
 
   async componentDidMount() {
-    console.log(this.props)
-    const { audioTrack, description, id, title } = this.props.data
-    console.log(audioTrack, description, id, title)
+    const { audioTrack, description, id, title, image, author } = this.props.data
     const track = {
-      id: id.toString(), // Must be a string, required
-      url: audioTrack, // Load media from the network
+      id: id.toString(),
+      url: audioTrack,
       title: title,
-      //TODO: Get artist and artwork
-      artist: 'GG'
-      // artwork: 'http://example.com/avaritia.png', // Load artwork from the network
-    };
+      artist: author,
+      artwork: image
+    }
     await TrackPlayer.add([track]);
     await TrackPlayer.play();
   }
 
+  handlePause = async () => {
+    await TrackPlayer.pause()
+  }
+
+  handlePlay = async () => {
+    await TrackPlayer.play()
+  }
+
+  handleSeek = async (percentage) => {
+    const duration = await TrackPlayer.getDuration()
+    await TrackPlayer.seekTo(percentage * duration)
+  }
+
   render() {
-    const { data } = this.props
+    const { audioTrack, description, id, title, image, author } = this.props.data
     return (
-      <SafeAreaView>
-        <Text>{data.title}</Text>
+      <SafeAreaView style={{ justifyContent: 'center', alignItems: 'center' }}>
+        <Image source={{uri: image}} style={{ height: 200, width: 200 }} />
+        <Text style={{ fontSize: 20 }}>{title}</Text>
+        <TrackProgress onSeek={this.handleSeek}/>
+        <Button
+          onPress={this.handlePause}
+          title={'Pause'}
+        />
+        <Button
+          onPress={this.handlePlay}
+          title={'Play'}
+        />
+        <Text>{description}</Text>
       </SafeAreaView>
     );
   }

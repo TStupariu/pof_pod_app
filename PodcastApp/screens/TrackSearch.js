@@ -15,12 +15,15 @@ class TrackSearch extends Component {
     };
   }
 
-  getDataFromItem = (item) => ({
+  getDataFromItem = (item) => {
+    return ({
     id: get(item.getElementsByTagName('guid'), '0.value', null),
     title: get(item.getElementsByTagName('title'), '0.value', null),
     description: get(item.getElementsByTagName('description'), '0.value', null),
-    audioTrack: get(item.getElementsByTagName('enclosure'), '0.attributes.url', null)
-  })
+    audioTrack: get(item.getElementsByTagName('enclosure'), '0.attributes.url', null),
+    image: get(item.getElementsByTagName('itunes:image'), '0.attributes.href', null),
+    author: get(item.getElementsByTagName('itunes:author'), '0.value', null),
+  })}
 
   async componentDidMount() {
     const data = this.props.navigation.getParam('data')
