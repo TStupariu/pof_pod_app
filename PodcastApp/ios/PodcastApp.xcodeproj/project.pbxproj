@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -41,6 +42,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		C4EC55BD930D8C03025ADCA9 /* libPods-PodcastAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 770C6B3C622718ED8F739947 /* libPods-PodcastAppTests.a */; };
+		C594E99522D4E6FC000E37B8 /* libVoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C594E99422D4E6C8000E37B8 /* libVoice.a */; };
 		C59B638A22CE485100FD4931 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C59B636222CE485000FD4931 /* GoogleService-Info.plist */; };
 		C59B63EE22CE631800FD4931 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */; };
 		C59B63EF22CE631800FD4931 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */; };
@@ -300,6 +302,13 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		C594E99322D4E6C8000E37B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C594E96622D4E6C8000E37B8 /* Voice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC0729B51EF78E41004EBC83;
+			remoteInfo = Voice;
+		};
 		C59B63C222CE4D1F00FD4931 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B824BFE327E0475BB8774464 /* RNFirebase.xcodeproj */;
@@ -395,6 +404,7 @@
 		BE7EF0455341A775DF614F1F /* Pods-PodcastApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastApp.release.xcconfig"; path = "Target Support Files/Pods-PodcastApp/Pods-PodcastApp.release.xcconfig"; sourceTree = "<group>"; };
 		C05B33D73FC0AF45AB310462 /* libPods-PodcastApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PodcastApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A61364B37F46B19720C612 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
+		C594E96622D4E6C8000E37B8 /* Voice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Voice.xcodeproj; path = "../node_modules/react-native-voice/ios/Voice.xcodeproj"; sourceTree = "<group>"; };
 		C59B636222CE485000FD4931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNTrackPlayer.xcodeproj; path = "../node_modules/react-native-track-player/ios/RNTrackPlayer.xcodeproj"; sourceTree = "<group>"; };
 		C59B642022CE675800FD4931 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
@@ -421,6 +431,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C594E99522D4E6FC000E37B8 /* libVoice.a in Frameworks */,
 				C59B641F22CE672F00FD4931 /* libRNTrackPlayer.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -622,6 +633,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				C594E96622D4E6C8000E37B8 /* Voice.xcodeproj */,
 				C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -682,6 +694,14 @@
 			children = (
 				ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */,
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C594E96722D4E6C8000E37B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C594E99422D4E6C8000E37B8 /* libVoice.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -918,6 +938,10 @@
 				{
 					ProductGroup = C59B641A22CE671F00FD4931 /* Products */;
 					ProjectRef = C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */;
+				},
+				{
+					ProductGroup = C594E96722D4E6C8000E37B8 /* Products */;
+					ProjectRef = C594E96622D4E6C8000E37B8 /* Voice.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1160,6 +1184,13 @@
 			fileType = archive.ar;
 			path = libRCTBlob.a;
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C594E99422D4E6C8000E37B8 /* libVoice.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libVoice.a;
+			remoteRef = C594E99322D4E6C8000E37B8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C59B63C322CE4D1F00FD4931 /* libRNFirebase.a */ = {

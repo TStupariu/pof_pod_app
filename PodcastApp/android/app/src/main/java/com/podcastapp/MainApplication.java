@@ -3,6 +3,7 @@ package com.podcastapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.wenkesj.voice.VoicePackage;
 import com.reactnativecommunity.slider.ReactSliderPackage;
 import com.guichaguri.trackplayer.TrackPlayer;
 import io.invertase.firebase.RNFirebasePackage;
@@ -27,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new VoicePackage(),
             new ReactSliderPackage(),
             new TrackPlayer(),
             new RNFirebasePackage(),

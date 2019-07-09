@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Button, Image, SafeAreaView, Text, View} from "react-native";
 import TrackPlayer from "react-native-track-player";
 import TrackProgress from "./TrackProgress";
+import AudioListener from "./AudioListener";
 
 class Player extends Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class Player extends Component {
           title={'Play'}
         />
         <Text>{description}</Text>
+        <AudioListener />
       </SafeAreaView>
     );
   }
