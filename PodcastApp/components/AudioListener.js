@@ -70,18 +70,25 @@ class AudioListener extends Component {
 
   onCommentEnd = async (transcript) => {
     clearTimeout(this.commentTimeout)
-    await Voice.stop()
+    await Voice.cancel()
+    await this.handleSpeechEnd()
     this.isListeningForComment = false
     this.setState({
       comment: transcript
     })
     await this.props.handlePlay()
-    await Voice.start()
+    try {
+      console.log('HAAAA?')
+      await Voice.start()
+    } catch (e) {
+      console.log('NOT WORKING')
+    }
   }
 
   triggerCommentListening = async () => {
     this.isListeningForComment = true
-    await Voice.stop()
+    await Voice.cancel()
+    await this.handleSpeechEnd()
     await this.props.handlePause()
     Tts.stop()
     //  Stop playback, TTS playback and reset Voice
