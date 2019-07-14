@@ -3,6 +3,7 @@ package com.podcastapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import net.no_mad.tts.TextToSpeechPackage;
 import com.wenkesj.voice.VoicePackage;
 import com.reactnativecommunity.slider.ReactSliderPackage;
 import com.guichaguri.trackplayer.TrackPlayer;
@@ -28,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new TextToSpeechPackage(),
             new VoicePackage(),
             new ReactSliderPackage(),
             new TrackPlayer(),

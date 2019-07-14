@@ -3,6 +3,7 @@ import {Button, Image, SafeAreaView, Text, View} from "react-native";
 import TrackPlayer from "react-native-track-player";
 import TrackProgress from "./TrackProgress";
 import AudioListener from "./AudioListener";
+import {db, sanitize} from "../firebase";
 
 class Player extends Component {
   constructor(props) {
@@ -37,6 +38,21 @@ class Player extends Component {
     await TrackPlayer.seekTo(percentage * duration)
   }
 
+  setVolume = async (value) => {
+    await TrackPlayer.setVolume(value)
+  }
+
+  handleLeaveComment = async (comment) => {
+    if (comment) {
+      const { audioTrack, description, id, title, image, author } = this.props.data
+      const time = await TrackPlayer.getPosition()
+
+      await db
+        .ref(`comments/${sanitize(id)}`)
+        .update({ [sanitize(time.toFixed(6))]: comment })
+    }
+  }
+
   render() {
     const { audioTrack, description, id, title, image, author } = this.props.data
     return (
@@ -53,7 +69,11 @@ class Player extends Component {
           title={'Play'}
         />
         <Text>{description}</Text>
-        <AudioListener />
+        <AudioListener
+          handlePause={this.handlePause}
+          handlePlay={this.handlePlay}
+          handleLeaveComment={this.handleLeaveComment}
+        />
       </SafeAreaView>
     );
   }

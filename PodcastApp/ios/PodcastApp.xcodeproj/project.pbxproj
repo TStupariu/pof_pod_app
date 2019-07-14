@@ -49,6 +49,7 @@
 		C59B63F022CE631800FD4931 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */; };
 		C59B641F22CE672F00FD4931 /* libRNTrackPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C59B641E22CE672000FD4931 /* libRNTrackPlayer.a */; };
 		C59B642122CE675800FD4931 /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59B642022CE675800FD4931 /* dummy.swift */; };
+		C5E7859622D626C100E19DB4 /* libTextToSpeech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E7859422D626AD00E19DB4 /* libTextToSpeech.a */; };
 		C88BD867162544378402B9D0 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CAB87EDC4C748F4F7022 /* RNPlaceholder.swift */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
@@ -323,6 +324,13 @@
 			remoteGlobalIDString = 9B0E28291F07D76F00B71D2A;
 			remoteInfo = RNTrackPlayer;
 		};
+		C5E7859322D626AD00E19DB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5E7856622D626AD00E19DB4 /* TextToSpeech.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A6FB2081D99E12200593599;
+			remoteInfo = TextToSpeech;
+		};
 		C5ECC9F022CE459400B9996C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -408,6 +416,7 @@
 		C59B636222CE485000FD4931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNTrackPlayer.xcodeproj; path = "../node_modules/react-native-track-player/ios/RNTrackPlayer.xcodeproj"; sourceTree = "<group>"; };
 		C59B642022CE675800FD4931 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
+		C5E7856622D626AD00E19DB4 /* TextToSpeech.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TextToSpeech.xcodeproj; path = "../node_modules/react-native-tts/ios/TextToSpeech.xcodeproj"; sourceTree = "<group>"; };
 		CD02F1BC0BEDF7D80DF39314 /* Pods-PodcastApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-PodcastApp-tvOSTests/Pods-PodcastApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF3CB69096FF4F5F8060C0F0 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
 		DDF1A5CD5C08D14C96957C9A /* Pods-PodcastAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodcastAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PodcastAppTests/Pods-PodcastAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -431,6 +440,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E7859622D626C100E19DB4 /* libTextToSpeech.a in Frameworks */,
 				C594E99522D4E6FC000E37B8 /* libVoice.a in Frameworks */,
 				C59B641F22CE672F00FD4931 /* libRNTrackPlayer.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
@@ -633,6 +643,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				C5E7856622D626AD00E19DB4 /* TextToSpeech.xcodeproj */,
 				C594E96622D4E6C8000E37B8 /* Voice.xcodeproj */,
 				C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
@@ -718,6 +729,14 @@
 			isa = PBXGroup;
 			children = (
 				C59B641E22CE672000FD4931 /* libRNTrackPlayer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5E7856722D626AD00E19DB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5E7859422D626AD00E19DB4 /* libTextToSpeech.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -938,6 +957,10 @@
 				{
 					ProductGroup = C59B641A22CE671F00FD4931 /* Products */;
 					ProjectRef = C59B641922CE671F00FD4931 /* RNTrackPlayer.xcodeproj */;
+				},
+				{
+					ProductGroup = C5E7856722D626AD00E19DB4 /* Products */;
+					ProjectRef = C5E7856622D626AD00E19DB4 /* TextToSpeech.xcodeproj */;
 				},
 				{
 					ProductGroup = C594E96722D4E6C8000E37B8 /* Products */;
@@ -1205,6 +1228,13 @@
 			fileType = archive.ar;
 			path = libRNTrackPlayer.a;
 			remoteRef = C59B641D22CE672000FD4931 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C5E7859422D626AD00E19DB4 /* libTextToSpeech.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTextToSpeech.a;
+			remoteRef = C5E7859322D626AD00E19DB4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C5ECC9F122CE459400B9996C /* libjsi.a */ = {
