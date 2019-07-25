@@ -6,7 +6,7 @@ class PodcastSearchScreen extends Component {
     super(props);
 
     this.state = {
-      searchQuery: 'Zero',
+      searchQuery: 'Zero to ipo',
       podcasts: [],
     };
   }

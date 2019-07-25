@@ -9,7 +9,9 @@ class Player extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      interactions: {}
+    };
   }
 
   async componentDidMount() {
@@ -21,8 +23,26 @@ class Player extends Component {
       artist: author,
       artwork: image
     }
-    await TrackPlayer.add([track]);
-    await TrackPlayer.play();
+    await TrackPlayer.add([track])
+    await TrackPlayer.play()
+    const snap = await db.ref(`interactions/${sanitize(id)}`).once('value')
+    if (snap.exists) {
+      const data = snap.val()
+      const interactions = {}
+      Object.keys(data).forEach(key => {
+        const item = data[key]
+        interactions[key/1000000] = item
+      })
+      this.setState({
+        interactions
+      })
+    }
+  }
+
+  handlePollAnswer = (option = 'option1', pollTime = null) => {
+    const { id } = this.props.data
+    console.log(option, pollTime)
+    db.ref(`interactions/${sanitize(id)}/${pollTime * 1000000}/picks`).push(option)
   }
 
   handlePause = async () => {
@@ -55,6 +75,7 @@ class Player extends Component {
 
   render() {
     const { audioTrack, description, id, title, image, author } = this.props.data
+
     return (
       <SafeAreaView style={{ justifyContent: 'center', alignItems: 'center' }}>
         <Image source={{uri: image}} style={{ height: 200, width: 200 }} />
@@ -73,6 +94,8 @@ class Player extends Component {
           handlePause={this.handlePause}
           handlePlay={this.handlePlay}
           handleLeaveComment={this.handleLeaveComment}
+          interactions={this.state.interactions}
+          handlePollAnswer={this.handlePollAnswer}
         />
       </SafeAreaView>
     );

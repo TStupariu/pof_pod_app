@@ -32,7 +32,6 @@ class TrackSearch extends Component {
     const resultXML = await result.text()
     const xml = new XMLParser().parseFromString(resultXML)
     const xmlTracks = xml.getElementsByTagName('item')
-    console.log('???', xmlTracks)
     const tracks = xmlTracks.map(this.getDataFromItem)
     this.setState({
       tracks

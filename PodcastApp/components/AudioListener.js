@@ -3,8 +3,9 @@ import {Button, Text, View} from "react-native";
 import Voice from 'react-native-voice'
 import Tts from 'react-native-tts'
 import { db } from "../firebase";
+import TrackPlayer, {ProgressComponent} from "react-native-track-player";
 
-class AudioListener extends Component {
+class AudioListener extends ProgressComponent {
   constructor(props) {
     super(props);
 
@@ -19,11 +20,22 @@ class AudioListener extends Component {
     Tts.setDucking(true)
 
     this.isListeningForComment = false
+    this.isListeningForPollOption = false
     this.commentTimeout = null
     this.oldTranscript = null
+    this.nextInteraction = null
+    this.oldInteraction = null
+    this.generator = null
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.interactions !== this.props.interactions) {
+      this.listenForInteractions(this.props.interactions)
+    }
   }
 
   componentDidMount() {
+    setInterval(this.checkForInteraction, 500)
     try {
       Voice.start('en-US')
       Voice.onSpeechResults = this.handleSpeechResult
@@ -32,6 +44,50 @@ class AudioListener extends Component {
       Tts.addEventListener('tts-finish', this.onTTSFinish);
     } catch (e) {
       console.log('ERROR', e)
+    }
+  }
+
+  checkForInteraction = async () => {
+    if (this.nextInteraction) {
+      const position = await TrackPlayer.getPosition()
+      if (this.nextInteraction && Math.abs(position - this.nextInteraction.time) < 1) {
+        this.triggerPollSequence(this.nextInteraction)
+        this.setNextInteraction()
+      }
+    }
+  }
+
+  triggerPollSequence = async (poll) => {
+    await this.props.handlePause()
+    await Voice.cancel()
+    await this.handleSpeechEnd()
+    Tts.speak(`Question: ${poll.name}`)
+    Tts.speak(`First Option: ${poll.option1}`)
+    Tts.speak(`Second Option: ${poll.option2}`)
+    Tts.speak(`Say the number you want to choose:`)
+    await Voice.start()
+    this.isListeningForPollOption = true
+  }
+
+  listenForInteractions(interactions) {
+    this.generator = this.getInteraction(interactions)
+    this.setNextInteraction()
+  }
+
+  *getInteraction(interactions) {
+    for (let key of Object.keys(interactions)) {
+      yield {...interactions[key], time: key}
+    }
+  }
+
+
+  setNextInteraction = () => {
+    const next = this.generator.next()
+    this.oldInteraction = this.nextInteraction
+    if (!next.done) {
+      this.nextInteraction = next.value
+    } else {
+      this.nextInteraction = null
     }
   }
 
@@ -47,7 +103,6 @@ class AudioListener extends Component {
     })
   }
 
-
   onTTSFinish = async () => {
     if (this.isListeningForComment) {
       await this.triggerCommentListeningFinish()
@@ -60,7 +115,10 @@ class AudioListener extends Component {
     if (transcript === this.oldTranscript) return null
     this.oldTranscript = transcript
 
-    if (this.isListeningForComment) {
+    console.log(transcript, ' > ', this.isListeningForPollOption)
+    if (this.isListeningForPollOption) {
+      this.onPollEnd(transcript)
+    } else if (this.isListeningForComment) {
       clearTimeout(this.commentTimeout)
       this.commentTimeout = setTimeout(() => this.onCommentEnd(transcript), 1000)
     } else if (transcript.toUpperCase().includes('LEAVE A COMMENT')) {
@@ -78,10 +136,24 @@ class AudioListener extends Component {
     })
     await this.props.handlePlay()
     try {
-      console.log('HAAAA?')
       await Voice.start()
     } catch (e) {
       console.log('NOT WORKING')
+    }
+  }
+
+  onPollEnd = async (transcript) => {
+    if (transcript.includes('one') || transcript.includes('two')) {
+      await Voice.cancel()
+      await this.handleSpeechEnd()
+      this.isListeningForPollOption = false
+      await this.props.handlePlay()
+      try {
+        await Voice.start()
+      } catch (e) {
+        console.log('NOT WORKING')
+      }
+      this.props.handlePollAnswer(transcript.includes('one') ? 'option1' : 'option2', this.oldInteraction.time)
     }
   }
 
