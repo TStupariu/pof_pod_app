@@ -80,7 +80,7 @@ class TrackSearch extends Component {
           keyExtractor={(item, index) => `${item.id}_track${index}`}
         />
         <Modal visible={this.state.modalVisible}>
-          <Player data={this.state.playingTrack}/>
+          <Player data={this.state.playingTrack} tracks={this.state.tracks}/>
         </Modal>
       </ScrollView>
     );

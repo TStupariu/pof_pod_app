@@ -24,7 +24,7 @@ class Player extends Component {
       artwork: image
     }
     await TrackPlayer.add([track])
-    await TrackPlayer.play()
+    // await TrackPlayer.play()
     const snap = await db.ref(`interactions/${sanitize(id)}`).once('value')
     if (snap.exists) {
       const data = snap.val()
@@ -35,6 +35,23 @@ class Player extends Component {
       })
       this.setState({
         interactions
+      })
+    }
+    const endScreenSnap = await db.ref(`endScreens/${sanitize(id)}`).once('value')
+    if (endScreenSnap.exists) {
+      const data = endScreenSnap.val()
+      console.log(data, this.props.tracks)
+      this.setState({
+        endScreen: {
+          track1: {
+            key: data.track1,
+            ...this.props.tracks.find(track => track.id === data.track1)
+          },
+          track2: {
+            key: data.track2,
+            ...this.props.tracks.find(track => track.id === data.track2)
+          }
+        }
       })
     }
   }
@@ -95,6 +112,7 @@ class Player extends Component {
           handlePlay={this.handlePlay}
           handleLeaveComment={this.handleLeaveComment}
           interactions={this.state.interactions}
+          endScreen={this.state.endScreen}
           handlePollAnswer={this.handlePollAnswer}
         />
       </SafeAreaView>
